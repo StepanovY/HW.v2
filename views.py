@@ -7,7 +7,7 @@ from models import BatchRequestParams
 main_bp = Blueprint('main', __name__)
 
 
-@main_bp.route('/perform_query', methods=['POST'])
+@main_bp.route('/perform_query/', methods=['POST'])
 def perform_query():
     try:
         params = BatchRequestParams().load(request.json)

@@ -1,3 +1,6 @@
+import re
+
+
 def filter_query(param, data):
     return list(filter(lambda x: param in x, data))
 
@@ -19,3 +22,8 @@ def sort_query(param, data):
 def limit_query(param, data):
     limit = int(param)
     return list(data)[:limit]
+
+
+def regex_query(param, data):
+    regex = re.compile(param)
+    return list(filter(lambda x: regex.search(x), data))
