@@ -12,7 +12,7 @@ CMD_TO_FUNCTION = {
 FILE_NAME = 'data/apache_logs.txt'
 
 
-def build_query(cmd, param, data):
+def build_query(cmd: str, param: str, data: str) -> list:
     if data is None:
         with open(FILE_NAME) as file:
             prepared_data = list(map(lambda x: x.strip(), file))
